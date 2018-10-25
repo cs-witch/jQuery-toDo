@@ -5,4 +5,11 @@ body{
 
 h1 {
 	font-family: 'Permanent Marker', cursive;
+	font-size: 60px;
+}
+
+.group-list {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: 'Permanent Marker', cursive;
 }

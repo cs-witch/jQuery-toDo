@@ -1,36 +1,36 @@
-// selct the title input field
-//var titleFld = document.querySelector("#title");
-var titleFld = $('#title');
-
-// select add button
-
+// select the title input field
+// var titleFld = document.querySelector("#title");
+var titleFld = $("#title");
+// console.log(titleFld);
+// select the add button
 var addBtn = $("#addBtn");
-//select todo list
-var todos = $('#todos')
+// select the todo list
+var todos = $("#todos");
 
 addBtn.click(addTodo);
 
 // add todo
 function addTodo() {
-	// console.log("addded");
-	var title = titleFld.val();
-	//console.log(title);
-	var note = $("<li>").append(title);
-	console.log(note);
+    // console.log("hello from addTodo");
+    // Get user input value for title
+    var title = titleFld.val();
+    // console.log(title);
+    // Create a list item with user input
+    var note = $("<li>").append(title);
+    note.addClass("list-group-item ");
+    var deleteBtn = $("<btn>")
+        .addClass("btn btn-danger float-right")
+        .click(deleteTodo);
+    var deleteIcon = $("<i>").addClass("fas fa-trash ");
+    deleteBtn.append(deleteIcon);
+    note.append(deleteBtn);
+    // console.log(note);
+    todos.append(note);
 }
 
-/*
-function checkInput(y) {
-	if (typeof y === "number") {
-		console.log("I'm a number");
-	}
-	else if (typeof y === "string") {
-		console.log("I'm a string");	
-	} else {
-		console.log("-1");
-	}
+// Delete the selected todo
+function deleteTodo(e) {
+    // console.log("hello from delete");
+    var todo = $(e.currentTarget).parent();
+    todo.remove();
 }
-
-checkInput("10");
-
-*/
